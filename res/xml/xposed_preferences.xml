@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	<PreferenceCategory
+		android:layout="@layout/preference_category_widget"
+        android:title="框架相关">
+
+		<Preference
+            android:key="xposed"
+            android:title="Xposed框架"
+			android:summary="所有框架程序运行的支持" />
+		
+		<Preference
+            android:key="fsbi"
+            android:title="Flat Style Bar Indicators"
+			android:summary="状态栏的高大上" />
+		
+		<Preference
+            android:key="tsb"
+            android:title="Tinted Staus Bar"
+			android:summary="状态栏变色，变你所想" />
+		
+		<Preference
+            android:key="greenify"
+            android:title="Greenify绿色守护"
+			android:summary="终结程序只需一小步" />
+
+	</PreferenceCategory>
+
+</PreferenceScreen>
