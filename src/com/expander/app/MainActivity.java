@@ -38,7 +38,7 @@ public class MainActivity extends BaseActivity
 		
     }
 	
-	public class ExpanderFragment extends PreferenceFragment {
+	public static class ExpanderFragment extends PreferenceFragment {
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -50,24 +50,37 @@ public class MainActivity extends BaseActivity
         public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
             super.onPreferenceTreeClick(preferenceScreen, preference);
             if(preference==findPreference("xposed")) {
-				startActivity(new Intent(MainActivity.this,XposedModActivity.class));
+				startActivity(new Intent(getActivity(),XposedModActivity.class));
             } else if(preference==findPreference("viperfx")){
-				StartActivity(AppUtils.VIPERFX);
+				StartActivity(getActivity(),AppUtils.VIPERFX);
 			} else if(preference==findPreference("edge")){
-				StartActivity(AppUtils.EDGE);
+				StartActivity(getActivity(),AppUtils.EDGE);
 			} else if(preference==findPreference("applock")){
-				StartActivity(AppUtils.APPLOCK);
+				StartActivity(getActivity(),AppUtils.APPLOCK);
 			} else if(preference==findPreference("adaway")){
-				StartActivity(AppUtils.ADAWAY);
+				StartActivity(getActivity(),AppUtils.ADAWAY);
 			} else if(preference==findPreference("supersu")){
-				StartActivity(AppUtils.SUPERSU);
+				StartActivity(getActivity(),AppUtils.SUPERSU);
 			} else if(preference==findPreference("nowakelock")){
-				StartActivity(AppUtils.NOWAKELOCK);
+				StartActivity(getActivity(),AppUtils.NOWAKELOCK);
 			} else if(preference==findPreference("screen_recorder")){
-				StartActivity(AppUtils.SCREEN_RECORDER);
+				StartActivity(getActivity(),AppUtils.SCREEN_RECORDER);
 			}
             return false;
         }
+		/*
+		public DetailsFragment newInstance(int index) {
+			DetailsFragment f = new DetailsFragment();
+
+			// Supply index input as an argument.
+			Bundle args = new Bundle();
+			args.putInt("index", index);
+			f.setArguments(args);
+			return f;
+		}
+		*/
+		
+		
     }
 	
 	

@@ -36,7 +36,7 @@ public class XposedModActivity extends BaseActivity
 		setAppTitle("Xposed与模块");
 	}
 	
-	public class XposedFragment extends PreferenceFragment {
+	public static class XposedFragment extends PreferenceFragment {
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -48,17 +48,17 @@ public class XposedModActivity extends BaseActivity
         public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
             super.onPreferenceTreeClick(preferenceScreen, preference);
             if(preference==findPreference("xposed")) {
-				StartActivity(AppUtils.XPOSED);
+				StartActivity(getActivity(),AppUtils.XPOSED);
             } else if(preference==findPreference("fsbi")){
-				StartActivity(AppUtils.FSBI);
+				StartActivity(getActivity(),AppUtils.FSBI);
 			} else if(preference==findPreference("tsb")){
-				StartActivity(AppUtils.XPOSEDSTORE);
+				StartActivity(getActivity(),AppUtils.XPOSEDSTORE);
 			} else if(preference==findPreference("greenify")){
-				StartActivity(AppUtils.GREENIFY);
+				StartActivity(getActivity(),AppUtils.GREENIFY);
 			} else if(preference==findPreference("gravitybox")){
-				StartActivity(AppUtils.GRAVITYBOX);
+				StartActivity(getActivity(),AppUtils.GRAVITYBOX);
 			} else if(preference==findPreference("xposedstore")){
-				StartActivity(AppUtils.XPOSEDSTORE);
+				StartActivity(getActivity(),AppUtils.XPOSEDSTORE);
 			}
             return false;
         }

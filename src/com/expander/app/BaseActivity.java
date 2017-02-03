@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import com.expander.app.R;
 import com.expander.app.manager.SystemBarTintManager;
+import android.content.Context;
 
 public class BaseActivity extends Activity
 {
@@ -21,7 +22,7 @@ public class BaseActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		//setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
 			//透明状态栏
 			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -37,21 +38,21 @@ public class BaseActivity extends Activity
 		title.setText(Title);
 	}
 	
-	public void StartActivity(String packageName){
+	public static void StartActivity(Context c,String packageName){
 		try{
 			Intent intent = new Intent(); 
-			PackageManager packageManager = getPackageManager(); 
+			PackageManager packageManager = c.getPackageManager(); 
 			intent = packageManager.getLaunchIntentForPackage(packageName); 
 			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED | Intent.FLAG_ACTIVITY_CLEAR_TOP) ; 
-			startActivity(intent);
+			c.startActivity(intent);
 			//overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 		} catch(Exception e){
-			showErroDialog();
+			showErroDialog(c);
 		}
 	}
 	//出现错误的dialog
-	public void showErroDialog(){
-		AlertDialog.Builder alert=new AlertDialog.Builder(this);
+	public static void showErroDialog(Context c){
+		AlertDialog.Builder alert=new AlertDialog.Builder(c);
 		alert.setMessage("哎呀，居然发生错误了，是不是没有安装这个程序呢 :(");
 		alert.setPositiveButton("确定",null);
 		alert.setCancelable(false);
