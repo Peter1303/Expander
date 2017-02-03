@@ -4,28 +4,45 @@
 
 	<PreferenceCategory
 		android:layout="@layout/preference_category_widget"
-        android:title="框架相关">
+        android:title="框架">
 
 		<Preference
             android:key="xposed"
             android:title="Xposed框架"
 			android:summary="所有框架程序运行的支持" />
-		
+
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:layout="@layout/preference_category_widget"
+        android:title="模块">
+
+		<Preference
+            android:key="gravitybox"
+            android:title="重力工具箱"
+			android:summary="你猜我是干嘛的¬_¬" />
+
 		<Preference
             android:key="fsbi"
-            android:title="Flat Style Bar Indicators"
+            android:title="状态栏自定义"
 			android:summary="状态栏的高大上" />
-		
-		<Preference
-            android:key="tsb"
-            android:title="Tinted Staus Bar"
-			android:summary="状态栏变色，变你所想" />
-		
+
 		<Preference
             android:key="greenify"
-            android:title="Greenify绿色守护"
+            android:title="绿色守护"
 			android:summary="终结程序只需一小步" />
 
 	</PreferenceCategory>
 
+	<PreferenceCategory
+		android:layout="@layout/preference_category_widget"
+        android:title="模块下载">
+
+		<Preference
+            android:key="xposedstore"
+            android:title="Xposed商店"
+			android:summary="可以下载你想要的模块" />
+
+	</PreferenceCategory>
 </PreferenceScreen>
+

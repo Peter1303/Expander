@@ -52,9 +52,13 @@ public class XposedModActivity extends BaseActivity
             } else if(preference==findPreference("fsbi")){
 				StartActivity(AppUtils.FSBI);
 			} else if(preference==findPreference("tsb")){
-				StartActivity(AppUtils.TSB);
+				StartActivity(AppUtils.XPOSEDSTORE);
 			} else if(preference==findPreference("greenify")){
 				StartActivity(AppUtils.GREENIFY);
+			} else if(preference==findPreference("gravitybox")){
+				StartActivity(AppUtils.GRAVITYBOX);
+			} else if(preference==findPreference("xposedstore")){
+				StartActivity(AppUtils.XPOSEDSTORE);
 			}
             return false;
         }

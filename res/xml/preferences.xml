@@ -1,57 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android" >
-	
+
 	<PreferenceCategory
 		android:layout="@layout/preference_category_widget"
-        android:title="框架相关">
-	
-		<Preference
-            android:key="xposed"
-            android:title="Xposed框架与模块"
-			android:summary="框架程序运行支持和其他模块" />
-		
-	</PreferenceCategory>
-	
-	<PreferenceCategory
-		android:layout="@layout/preference_category_widget"
-        android:title="其他拓展">
+        android:title="XPOSED">
 
 		<Preference
-            android:key="viperfx"
-            android:title="VIPERFX 音效驱动"
-			android:summary="给您现场般的体验" />
-		
+            android:key="xposed"
+            android:title="Xposed框架＆模块"
+			android:summary="框架程序运行支持和其他模块" />
+
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:layout="@layout/preference_category_widget"
+        android:title="实用工具">
+
 		<Preference
             android:key="edge"
             android:title="应用冻结"
 			android:summary="不爽就来冻一下" />
-		
+
 		<Preference
             android:key="applock"
-            android:title="应用程序锁App Lock"
+            android:title="应用程序锁"
 			android:summary="干嘛？别锁我..." />
-		
+
 		<Preference
             android:key="adaway"
-            android:title="广告快走中国版"
+            android:title="广告屏蔽"
 			android:summary="妈妈再也不用担心我的广告了" />
-		
-		<Preference
-            android:key="supersu"
-            android:title="SuperSU权限管理"
-			android:summary="你的权限你做主" />
-		
+
 		<Preference
             android:key="nowakelock"
             android:title="禁止唤醒"
 			android:summary="真的别叫醒我" />
-		
+
 		<Preference
             android:key="screen_recorder"
             android:title="屏幕录制"
 			android:summary="没事就来录个屏" />
-		
+
 	</PreferenceCategory>
-	
+
+	<PreferenceCategory
+		android:layout="@layout/preference_category_widget"
+        android:title="音质增强">
+
+		<Preference
+            android:key="viperfx"
+            android:title="蝰蛇音效"
+			android:summary="给您现场般的体验" />
+
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:layout="@layout/preference_category_widget"
+        android:title="ROOT管理">
+
+		<Preference
+            android:key="supersu"
+            android:title="SuperSU"
+			android:summary="你的权限你做主" />
+
+	</PreferenceCategory>
+
 </PreferenceScreen>
+

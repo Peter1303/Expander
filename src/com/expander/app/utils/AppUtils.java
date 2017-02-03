@@ -4,9 +4,10 @@ public class AppUtils
 {
 	//Xposed模块的
 	public static String XPOSED="de.robv.android.xposed.installer";
-	public static String TSB="com.mohammadag.colouredstatusbar";
+	public static String GRAVITYBOX="com.ceco.marshmallow.gravitybox";
 	public static String GREENIFY="com.oasisfeng.greenify";
-	public static String FSBI="com.bocharow.xposed.fsbi";
+	public static String FSBI="com.xposed.fsbi";
+	public static String XPOSEDSTORE="com.szly.xposedstore";
 	//Others
 	public static String VIPERFX="com.audlabs.viperfx";
 	public static String EDGE="mark.edge";
