@@ -3,6 +3,7 @@ package com.expander.app;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ public class BaseActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
 			//透明状态栏
 			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -42,7 +44,7 @@ public class BaseActivity extends Activity
 			intent = packageManager.getLaunchIntentForPackage(packageName); 
 			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED | Intent.FLAG_ACTIVITY_CLEAR_TOP) ; 
 			startActivity(intent);
-			overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+			//overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 		} catch(Exception e){
 			showErroDialog();
 		}

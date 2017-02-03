@@ -24,7 +24,6 @@ public class MainActivity extends BaseActivity
 		
 		layout=(FrameLayout)findViewById(R.id.main_FrameLayout);
 		getFragmentManager().beginTransaction().replace(R.id.main_FrameLayout, new ExpanderFragment()).commit();
-		
 		ImageView back=(ImageView)findViewById(R.id.ic_back);
 		back.setOnClickListener(new OnClickListener(){
 
@@ -37,9 +36,7 @@ public class MainActivity extends BaseActivity
 			
 		setAppTitle("拓展功能");
 		
-		
     }
-	
 	
 	public class ExpanderFragment extends PreferenceFragment {
 
@@ -72,6 +69,7 @@ public class MainActivity extends BaseActivity
             return false;
         }
     }
+	
 	
 	
 	/*
