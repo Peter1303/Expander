@@ -2,8 +2,9 @@ package com.expander.app;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,7 +13,6 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import com.expander.app.R;
 import com.expander.app.manager.SystemBarTintManager;
-import android.content.Context;
 
 public class BaseActivity extends Activity
 {
@@ -38,22 +38,35 @@ public class BaseActivity extends Activity
 		title.setText(Title);
 	}
 	
-	public static void StartActivity(Context c,String packageName){
+	public static void StartActivity(Context c,String packageName,String className){
 		try{
-			Intent intent = new Intent(); 
-			PackageManager packageManager = c.getPackageManager(); 
-			intent = packageManager.getLaunchIntentForPackage(packageName); 
-			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED | Intent.FLAG_ACTIVITY_CLEAR_TOP) ; 
+			Intent intent = new Intent();
+			ComponentName cn = new ComponentName(packageName,className);
+			intent.setComponent(cn);
+			intent.setAction("android.intent.action.MAIN");
 			c.startActivity(intent);
 			//overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 		} catch(Exception e){
-			showErroDialog(c);
+			showErroDialog(c,e.toString());
 		}
 	}
+	
+	public static void StartActivity(Context c,String p){
+		try{
+			Intent intent = new Intent(); 
+			PackageManager packageManager = c.getPackageManager(); 
+			intent = packageManager.getLaunchIntentForPackage(p); 
+			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK) ; 
+			c.startActivity(intent);
+		} catch(Exception e){
+			showErroDialog(c,e.toString());
+		}
+	}
+	
 	//出现错误的dialog
-	public static void showErroDialog(Context c){
+	public static void showErroDialog(Context c,String s){
 		AlertDialog.Builder alert=new AlertDialog.Builder(c);
-		alert.setMessage("哎呀，居然发生错误了，是不是没有安装这个程序呢 :(");
+		alert.setMessage("哎呀，居然发生错误了 :(\n"+s);
 		alert.setPositiveButton("确定",null);
 		alert.setCancelable(false);
 		alert.create();

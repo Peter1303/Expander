@@ -48,17 +48,17 @@ public class XposedModActivity extends BaseActivity
         public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
             super.onPreferenceTreeClick(preferenceScreen, preference);
             if(preference==findPreference("xposed")) {
-				StartActivity(getActivity(),AppUtils.XPOSED);
+				StartActivity(getActivity(),AppUtils.XPOSED,AppUtils.XPOSED_CLASS);
             } else if(preference==findPreference("fsbi")){
-				StartActivity(getActivity(),AppUtils.FSBI);
+				StartActivity(getActivity(),AppUtils.FSBI,AppUtils.FSBI_CLASS);
 			} else if(preference==findPreference("tsb")){
 				StartActivity(getActivity(),AppUtils.XPOSEDSTORE);
 			} else if(preference==findPreference("greenify")){
-				StartActivity(getActivity(),AppUtils.GREENIFY);
+				StartActivity(getActivity(),AppUtils.GREENIFY,AppUtils.GREENIFY_CLASS);
 			} else if(preference==findPreference("gravitybox")){
-				StartActivity(getActivity(),AppUtils.GRAVITYBOX);
+				StartActivity(getActivity(),AppUtils.GRAVITYBOX,AppUtils.GRAVITYBOX_CLASS);
 			} else if(preference==findPreference("xposedstore")){
-				StartActivity(getActivity(),AppUtils.XPOSEDSTORE);
+				StartActivity(getActivity(),AppUtils.XPOSEDSTORE,AppUtils.XPOSEDSTORE_CLASS);
 			}
             return false;
         }

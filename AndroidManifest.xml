@@ -28,8 +28,6 @@
             android:excludeFromRecents="true"
             android:name=".XposedModActivity" />
 		
-		
-		
     </application>
 
 </manifest>

@@ -52,17 +52,17 @@ public class MainActivity extends BaseActivity
             if(preference==findPreference("xposed")) {
 				startActivity(new Intent(getActivity(),XposedModActivity.class));
             } else if(preference==findPreference("viperfx")){
-				StartActivity(getActivity(),AppUtils.VIPERFX);
+				StartActivity(getActivity(),AppUtils.VIPERFX,AppUtils.VIPERFX_CLASS);
 			} else if(preference==findPreference("edge")){
-				StartActivity(getActivity(),AppUtils.EDGE);
+				StartActivity(getActivity(),AppUtils.EDGE,AppUtils.EDGE_CLASS);
 			} else if(preference==findPreference("applock")){
-				StartActivity(getActivity(),AppUtils.APPLOCK);
+				StartActivity(getActivity(),AppUtils.APPLOCK,AppUtils.APPLOCK_CLASS);
 			} else if(preference==findPreference("adaway")){
-				StartActivity(getActivity(),AppUtils.ADAWAY);
+				StartActivity(getActivity(),AppUtils.ADAWAY,AppUtils.ADAWAY_CLASS);
 			} else if(preference==findPreference("supersu")){
-				StartActivity(getActivity(),AppUtils.SUPERSU);
+				StartActivity(getActivity(),AppUtils.SUPERSU,AppUtils.SUPERSU_CLASS);
 			} else if(preference==findPreference("nowakelock")){
-				StartActivity(getActivity(),AppUtils.NOWAKELOCK);
+				StartActivity(getActivity(),AppUtils.NOWAKELOCK,AppUtils.NOWAKELOCK_CLASS);
 			} else if(preference==findPreference("screen_recorder")){
 				StartActivity(getActivity(),AppUtils.SCREEN_RECORDER);
 			}
